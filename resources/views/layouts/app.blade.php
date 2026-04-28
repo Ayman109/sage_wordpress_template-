@@ -18,8 +18,8 @@
       </a>
 
       @include('sections.header')
-
-      <main id="main" class="main">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <main id="main" class="main">
         @yield('content')
       </main>
 
@@ -28,6 +28,8 @@
           @yield('sidebar')
         </aside>
       @endif
+      </div>
+      
 
       @include('sections.footer')
     </div>

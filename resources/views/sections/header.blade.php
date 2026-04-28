@@ -1,5 +1,5 @@
 <header class="banner">
-  <div class="flex justify-start items-center py-4">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
     <a class="brand" href="{{ home_url('/') }}">
       @if(get_theme_mod('site_logo'))
         <img src="{{ get_theme_mod('site_logo') }}" alt="{{ get_theme_mod('site_name') }}" class="max-h-12">

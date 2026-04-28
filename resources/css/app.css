@@ -3,8 +3,3 @@
 @source "../../app/**/*.php";
 @source "../**/*.blade.php";
 @source "../**/*.js";
-
-.banner div {
-    max-width: 1200px !important;
-    margin: 0 auto !important;
-}
