@@ -332,7 +332,6 @@ foreach ($socials as $id => [$label, $default]) {
     ]);
 }
 
-
 });
 
 add_action('wp_head', function () {
