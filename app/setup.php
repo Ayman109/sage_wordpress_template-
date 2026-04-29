@@ -185,4 +185,5 @@ require_once get_theme_file_path('app/dynamic-css.php');
 //login
 require_once __DIR__ . '/login.php';
 
-
+//middleware
+require_once __DIR__ . '/middleware/auth.php';
