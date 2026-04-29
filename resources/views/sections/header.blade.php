@@ -1,8 +1,12 @@
-<header class="banner">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
+<header class="banner bg-white">
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
     <a class="brand" href="{{ home_url('/') }}">
-      @if(get_theme_mod('site_logo'))
-        <img src="{{ get_theme_mod('site_logo') }}" alt="{{ get_theme_mod('site_name') }}" class="max-h-12">
+      @if (get_theme_mod('site_logo'))
+        <img
+          src="{{ get_theme_mod('site_logo') }}"
+          alt="{{ get_theme_mod('site_name') }}"
+          class="max-h-12"
+        />
       @else
         <span class="text-xl font-bold">{{ get_bloginfo('name') }}</span>
       @endif

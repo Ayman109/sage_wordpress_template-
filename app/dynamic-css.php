@@ -2,11 +2,7 @@
 
 add_action('customize_register', function ($wp_customize) {
 
-    // ✅ PANEL (parent)
-    $wp_customize->add_panel('general_options', [
-        'title' => __('Options Générales', 'sage'),
-        'priority' => 30,
-    ]);
+    
 
     // ✅ SECTION (identity site )
     $wp_customize->add_section('site_identity', [
@@ -266,11 +262,7 @@ foreach ($font_sizes as $id => [$label, $default]) {
     ]);
 }
 
-// PANEL CONTACT INFO
-$wp_customize->add_panel('contact_info_panel', [
-    'title' => __('Contact Info', 'sage'),
-    'priority' => 50,
-]);
+
 
 // SECTION CONTACT DETAILS
 $wp_customize->add_section('contact_details', [
@@ -337,9 +329,7 @@ foreach ($socials as $id => [$label, $default]) {
 add_action('wp_head', function () {
 ?>
 <style>
-    body {
-        font-size: <?php echo get_theme_mod('body_font_size', '16px'); ?>;
-    }
+
 
     .tag {
         font-size: <?php echo get_theme_mod('tag_font_size', '14px'); ?>;
@@ -367,8 +357,11 @@ add_action('wp_head', function () {
     ?>
     <style>
         body {
+            font-size: <?php echo get_theme_mod('body_font_size', '16px'); ?>;
             font-family: '<?php echo get_theme_mod('text_font', 'Arial'); ?>', sans-serif;
-        }
+            background-color: var(--color-background);
+
+         }
 
         h1, h2, h3, h4, h5, h6 {
             font-family: '<?php echo get_theme_mod('title_font', 'Poppins'); ?>', sans-serif;
@@ -381,12 +374,28 @@ add_action('wp_head', function () {
     ?>
     <style>
         :root {
+        
             --color-primary: <?php echo get_theme_mod('primary_color', '#0073aa'); ?>;
             --color-secondary: <?php echo get_theme_mod('secondary_color', '#6c757d'); ?>;
             --color-text: <?php echo get_theme_mod('text_color', '#333'); ?>;
             --color-link: <?php echo get_theme_mod('link_color', '#0073aa'); ?>;
             --color-link-hover: <?php echo get_theme_mod('link_hover_color', '#005177'); ?>;
+            --color-background: <?php echo get_theme_mod('background_color_custom', '#ffffff'); ?>;
         }
+        p , a , label , span {
+             color: var(--color-text);
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--color-primary);
+        }
+        button{
+            background-color: var(--color-primary);
+            color: white;
+        }
+        a:hover{
+            color: var(--color-link-hover);
+        }
+
     </style>
     <?php
 });

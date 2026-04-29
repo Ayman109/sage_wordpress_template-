@@ -162,6 +162,7 @@ add_action('widgets_init', function () {
     ] + $config);
 });
 
+
 // Loading Google Fonts
 add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style(
@@ -173,35 +174,15 @@ add_action('wp_enqueue_scripts', function () {
 });
 
 
-
-
-// Modifier le style de la page de connexion
-add_filter('login_headerurl', function () {
-    return home_url();
-});
-add_filter('login_headertext', function () {
-    return get_bloginfo('name');
+//Customizer
+add_action('customize_register', function ($wp_customize) {
+    require_once get_theme_file_path('app/customizer/index.php');
 });
 
-add_action('login_enqueue_scripts', function () {
-    ?>
-    <style>
+//dynamic css
+require_once get_theme_file_path('app/dynamic-css.php');
+
+//login
+require_once __DIR__ . '/login.php';
 
 
-        #login h1 a {
-            background-image: url('<?php echo get_theme_mod('site_logo'); ?>');
-            background-size: contain;
-            width: 100%;
-        }
-
-        .login form {
-            border-radius: 10px;
-        }
-
-        .wp-core-ui .button-primary {
-            background: #3b82f6;
-            border: none;
-        }
-    </style>
-    <?php
-});
